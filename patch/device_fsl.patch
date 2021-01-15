@@ -1,0 +1,33 @@
+diff --git a/imx8m/AndroidProducts.mk b/imx8m/AndroidProducts.mk
+index 924d44fe..0208a1c7 100644
+--- a/imx8m/AndroidProducts.mk
++++ b/imx8m/AndroidProducts.mk
+@@ -32,7 +32,8 @@ PRODUCT_MAKEFILES := \
+   $(LOCAL_DIR)/evk_8mm/evk_8mm.mk \
+   $(LOCAL_DIR)/evk_8mm/evk_8mm_drm.mk \
+   $(LOCAL_DIR)/evk_8mn/evk_8mn.mk \
+-  $(LOCAL_DIR)/evk_8mp/evk_8mp.mk
++  $(LOCAL_DIR)/evk_8mp/evk_8mp.mk \
++  $(LOCAL_DIR)/visionsom_8mm/visionsom_8mm.mk
+ 
+ COMMON_LUNCH_CHOICES := \
+   evk_8mq-user \
+@@ -46,4 +47,5 @@ COMMON_LUNCH_CHOICES := \
+   evk_8mn-user \
+   evk_8mn-userdebug \
+   evk_8mp-user \
+-  evk_8mp-userdebug
++  evk_8mp-userdebug \
++  visionsom_8mm-userdebug
+diff --git a/imx8m/ProductConfigCommon.mk b/imx8m/ProductConfigCommon.mk
+index 05fcfbc0..9a287bd9 100644
+--- a/imx8m/ProductConfigCommon.mk
++++ b/imx8m/ProductConfigCommon.mk
+@@ -98,6 +98,7 @@ PRODUCT_PACKAGES += \
+ PRODUCT_PACKAGES += \
+     fsl_sensor_fusion \
+     libbt-vendor \
++    libbt-vendor-broadcom \
+     magd
+ 
+ # memtrack
