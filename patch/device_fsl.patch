@@ -20,14 +20,16 @@ index 924d44fe..0208a1c7 100644
 +  evk_8mp-userdebug \
 +  visionsom_8mm-userdebug
 diff --git a/imx8m/ProductConfigCommon.mk b/imx8m/ProductConfigCommon.mk
-index 05fcfbc0..9a287bd9 100644
+index 2c7eb448..990028e8 100644
 --- a/imx8m/ProductConfigCommon.mk
 +++ b/imx8m/ProductConfigCommon.mk
-@@ -98,6 +98,7 @@ PRODUCT_PACKAGES += \
+@@ -87,7 +87,8 @@ PRODUCT_PACKAGES += \
+ # sensor
  PRODUCT_PACKAGES += \
      fsl_sensor_fusion \
-     libbt-vendor \
-+    libbt-vendor-broadcom \
-     magd
+-    libbt-vendor
++    libbt-vendor \
++    libbt-vendor-broadcom
  
  # memtrack
+ PRODUCT_PACKAGES += \
