@@ -1,0 +1,3 @@
+type led_control, fs_type, sysfs_type;
+
+allow system_app led_control:file { read write open getattr };

@@ -355,3 +355,7 @@ INSTALL_64BIT_LIBRARY := true
 endif
 -include $(FSL_CODEC_PATH)/fsl-codec/fsl-codec.mk
 endif
+
+# Demo application
+PRODUCT_PACKAGES += \
+    somlabsdemo

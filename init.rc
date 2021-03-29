@@ -157,6 +157,11 @@ on early-boot
     chmod 665 /sys/class/rfkill/rfkill1/state
     write /sys/class/rfkill/rfkill1/state 1
 
+    # Allow led brightness public write
+    chmod 666 /sys/devices/platform/leds/leds/LED-IO-04/brightness
+    chmod 666 /sys/devices/platform/leds/leds/LED-IO-05/brightness
+
+
 service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     -O/data/vendor/wifi/wpa/sockets -puse_p2p_group_interface=1 \
     -g@android:wpa_wlan0
