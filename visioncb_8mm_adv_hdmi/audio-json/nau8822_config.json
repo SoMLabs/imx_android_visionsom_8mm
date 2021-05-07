@@ -1,0 +1,4 @@
+{
+  "driver_name": "nau8822-cb-adv",
+  "supported_out_devices": ["speaker"]
+}
