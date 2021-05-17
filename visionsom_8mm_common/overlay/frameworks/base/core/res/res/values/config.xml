@@ -93,7 +93,7 @@
     <bool name="config_voice_capable">false</bool>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
-    <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
+    <bool translatable="false" name="config_wifi_dual_band_support">false</bool>
 
     <!-- Boolean indicating whether system support sustained performance mode. -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
