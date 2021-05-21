@@ -1,12 +1,21 @@
 diff --git a/Android.mk b/Android.mk
-index 7fd658b..bb04e14 100644
+index 7fd658b..2363a42 100644
 --- a/Android.mk
 +++ b/Android.mk
-@@ -95,4 +95,7 @@ endif
+@@ -95,4 +95,16 @@ endif
  ifeq ($(TARGET_PRODUCT), evk_8mq)
      include $(LOCAL_PATH)/conf/fsl/evk_8mq/Android.mk
  endif
-+ifeq ($(TARGET_PRODUCT), visionsom_8mm)
++ifeq ($(TARGET_PRODUCT), visioncb_8mm_adv_dsi)
++    include $(LOCAL_PATH)/conf/fsl/visionsom_8mm/Android.mk
++endif
++ifeq ($(TARGET_PRODUCT), visioncb_8mm_adv_hdmi)
++    include $(LOCAL_PATH)/conf/fsl/visionsom_8mm/Android.mk
++endif
++ifeq ($(TARGET_PRODUCT), visioncb_8mm_std_dsi)
++    include $(LOCAL_PATH)/conf/fsl/visionsom_8mm/Android.mk
++endif
++ifeq ($(TARGET_PRODUCT), visioncb_8mm_std_hdmi)
 +    include $(LOCAL_PATH)/conf/fsl/visionsom_8mm/Android.mk
 +endif
  endif # BOARD_HAVE_BLUETOOTH_BCM
@@ -38,30 +47,62 @@ index 0000000..7448981
 +# Firmware patch file location
 +FwPatchFilePath = /vendor/firmware/brcm/
 +FwPatchFileName = BCM43430A1.hcd
-diff --git a/include/bt_vendor_brcm.h b/include/bt_vendor_brcm.h
-index 545e76e..03dea5b 100644
---- a/include/bt_vendor_brcm.h
-+++ b/include/bt_vendor_brcm.h
-@@ -51,12 +51,12 @@
- 
- /* Run-time configuration file */
- #ifndef VENDOR_LIB_CONF_FILE
--#define VENDOR_LIB_CONF_FILE "/etc/bluetooth/bt_vendor.conf"
-+#define VENDOR_LIB_CONF_FILE "/vendor/etc/bluetooth/bt_vendor.conf"
- #endif
- 
- /* Device port name where Bluetooth controller attached */
- #ifndef BLUETOOTH_UART_DEVICE_PORT
--#define BLUETOOTH_UART_DEVICE_PORT      "/dev/ttyO1"    /* maguro */
-+#define BLUETOOTH_UART_DEVICE_PORT      "/dev/ttymxc0"    /* maguro */
- #endif
- 
- /* Location of firmware patch files */
-diff --git a/include/vnd_visionsom_8mm.txt b/include/vnd_visionsom_8mm.txt
+diff --git a/include/vnd_visioncb_8mm_adv_dsi.txt b/include/vnd_visioncb_8mm_adv_dsi.txt
 new file mode 100644
 index 0000000..1e46fe0
 --- /dev/null
-+++ b/include/vnd_visionsom_8mm.txt
++++ b/include/vnd_visioncb_8mm_adv_dsi.txt
+@@ -0,0 +1,11 @@
++BLUETOOTH_UART_DEVICE_PORT = "/dev/ttymxc0"
++FW_PATCHFILE_LOCATION = "/vendor/firmware/brcm"
++VENDOR_LIB_CONF_FILE = "/vendor/etc/bluetooth/bt_vendor.conf"
++LPM_IDLE_TIMEOUT_MULTIPLE = 5
++SCO_USE_I2S_INTERFACE = FALSE
++BTVND_DBG = TRUE
++BTHW_DBG = TRUE
++VNDUSERIAL_DBG = TRUE
++UPIO_DBG = TRUE
++LPM_SLEEP_MODE = 0
++UART_TARGET_BAUD_RATE = 1000000
+diff --git a/include/vnd_visioncb_8mm_adv_hdmi.txt b/include/vnd_visioncb_8mm_adv_hdmi.txt
+new file mode 100644
+index 0000000..1e46fe0
+--- /dev/null
++++ b/include/vnd_visioncb_8mm_adv_hdmi.txt
+@@ -0,0 +1,11 @@
++BLUETOOTH_UART_DEVICE_PORT = "/dev/ttymxc0"
++FW_PATCHFILE_LOCATION = "/vendor/firmware/brcm"
++VENDOR_LIB_CONF_FILE = "/vendor/etc/bluetooth/bt_vendor.conf"
++LPM_IDLE_TIMEOUT_MULTIPLE = 5
++SCO_USE_I2S_INTERFACE = FALSE
++BTVND_DBG = TRUE
++BTHW_DBG = TRUE
++VNDUSERIAL_DBG = TRUE
++UPIO_DBG = TRUE
++LPM_SLEEP_MODE = 0
++UART_TARGET_BAUD_RATE = 1000000
+diff --git a/include/vnd_visioncb_8mm_std_dsi.txt b/include/vnd_visioncb_8mm_std_dsi.txt
+new file mode 100644
+index 0000000..1e46fe0
+--- /dev/null
++++ b/include/vnd_visioncb_8mm_std_dsi.txt
+@@ -0,0 +1,11 @@
++BLUETOOTH_UART_DEVICE_PORT = "/dev/ttymxc0"
++FW_PATCHFILE_LOCATION = "/vendor/firmware/brcm"
++VENDOR_LIB_CONF_FILE = "/vendor/etc/bluetooth/bt_vendor.conf"
++LPM_IDLE_TIMEOUT_MULTIPLE = 5
++SCO_USE_I2S_INTERFACE = FALSE
++BTVND_DBG = TRUE
++BTHW_DBG = TRUE
++VNDUSERIAL_DBG = TRUE
++UPIO_DBG = TRUE
++LPM_SLEEP_MODE = 0
++UART_TARGET_BAUD_RATE = 1000000
+diff --git a/include/vnd_visioncb_8mm_std_hdmi.txt b/include/vnd_visioncb_8mm_std_hdmi.txt
+new file mode 100644
+index 0000000..1e46fe0
+--- /dev/null
++++ b/include/vnd_visioncb_8mm_std_hdmi.txt
 @@ -0,0 +1,11 @@
 +BLUETOOTH_UART_DEVICE_PORT = "/dev/ttymxc0"
 +FW_PATCHFILE_LOCATION = "/vendor/firmware/brcm"

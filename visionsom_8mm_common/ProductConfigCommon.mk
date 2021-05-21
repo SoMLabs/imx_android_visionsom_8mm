@@ -496,6 +496,10 @@ PRODUCT_COPY_FILES += \
     vendor/nxp/imx-firmware/cyw-wifi-bt/1DX_CYW43430/BCM43430A1.1DX.hcd:$(TARGET_COPY_OUT_VENDOR)/firmware/brcm/BCM43430A1.hcd \
     hardware/broadcom/libbt/conf/fsl/visionsom_8mm/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
+# Set Bluetooth transport initialization timeout
+PRODUCT_PROPERTY_OVERRIDES += \
+    bluetooth.enable_timeout_ms=10000
+
 PRODUCT_PACKAGES += \
     bt_vendor.conf
 
