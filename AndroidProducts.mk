@@ -33,7 +33,11 @@ PRODUCT_MAKEFILES := \
   $(LOCAL_DIR)/visioncb_8mm_std_hdmi/visioncb_8mm_std_hdmi.mk
 
 COMMON_LUNCH_CHOICES := \
+  visioncb_8mm_adv_dsi-user \
   visioncb_8mm_adv_dsi-userdebug \
+  visioncb_8mm_adv_hdmi-user \
   visioncb_8mm_adv_hdmi-userdebug \
+  visioncb_8mm_std_dsi-user \
   visioncb_8mm_std_dsi-userdebug \
+  visioncb_8mm_std_hdmi-user \
   visioncb_8mm_std_hdmi-userdebug
