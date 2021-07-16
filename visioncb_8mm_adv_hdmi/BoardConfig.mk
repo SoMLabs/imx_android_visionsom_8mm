@@ -81,7 +81,8 @@ WIFI_DRIVER_FW_PATH_PARAM      := "/sys/module/brcmfmac/parameters/alternative_f
 
 BOARD_VENDOR_KERNEL_MODULES += \
                             $(KERNEL_OUT)/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko \
-                            $(KERNEL_OUT)/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko
+                            $(KERNEL_OUT)/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko \
+                            $(KERNEL_OUT)/sound/drivers/snd-dummy.ko
 
 # BCM 1DX BT
 BOARD_HAVE_BLUETOOTH_BCM := true

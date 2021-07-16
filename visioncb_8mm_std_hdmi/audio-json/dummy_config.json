@@ -1,0 +1,5 @@
+{
+  "driver_name": "Dummy",
+  "supported_out_devices": ["speaker"],
+  "supported_in_devices": ["builtin_mic"]
+}

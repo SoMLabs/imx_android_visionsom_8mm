@@ -18,3 +18,8 @@ endif
 PRODUCT_NAME := visioncb_8mm_std_hdmi
 PRODUCT_DEVICE := visioncb_8mm_std_hdmi
 PRODUCT_MODEL := VISIONCB_8MM_STD_HDMI
+
+# Audio card json
+PRODUCT_COPY_FILES += \
+    $(VISIONSOM_DEVICE_PATH)/audio-json/dummy_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/configs/audio/dummy_config.json \
+    device/fsl/common/audio-json/readme.txt:$(TARGET_COPY_OUT_VENDOR)/etc/configs/audio/readme.txt
