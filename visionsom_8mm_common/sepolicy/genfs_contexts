@@ -6,33 +6,33 @@ genfscon sysfs /devices/virtual/power_supply/battery              u:object_r:sys
 genfscon sysfs /devices/platform/soc@0/soc@0:bus@30000000/30370000.snvs   u:object_r:sysfs_rtc:s0
 genfscon sysfs /devices/platform/sound-ak4458/extcon              u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/platform/sound-wm8960/extcon              u:object_r:sysfs_extcon:s0
-genfscon sysfs /devices/platform/sound-rpmsg/extcon               u:object_r:sysfs_extcon:s0
-genfscon sysfs /devices/platform/soc@0/32c00000.bus/32fd8000.hdmi/extcon            u:object_r:sysfs_extcon:s0
-genfscon sysfs /devices/platform/soc@0/soc@0:bus@32c00000/32c00000.hdmi/extcon      u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/rpmsg_audio/imx-audio-rpmsg.0.auto/extcon          u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/rpmsg_audio/imx-audio-rpmsg.1.auto/extcon          u:object_r:sysfs_extcon:s0
+# 8mp HDMI
+genfscon sysfs /devices/platform/soc@0/30c00000.bus/32fd8000.hdmi/extcon            u:object_r:sysfs_extcon:s0
+# 8mq HDMI
+genfscon sysfs /devices/platform/soc@0/32c00000.bus/32c00000.hdmi/extcon            u:object_r:sysfs_extcon:s0
 genfscon sysfs /devices/soc0   u:object_r:sysfs_soc:s0
 genfscon debugfs /dma_buf u:object_r:debugfs_dma:s0
 genfscon debugfs /sync/sw_sync u:object_r:debugfs_sw_sync:s0
-genfscon binder /binder u:object_r:binder_device:s0
-genfscon binder /hwbinder u:object_r:hwbinder_device:s0
-genfscon binder /vndbinder u:object_r:vndbinder_device:s0
-genfscon binder /binder_logs u:object_r:binderfs_logs:s0
-genfscon binder /binder_logs/proc u:object_r:binderfs_logs_proc:s0
-genfscon binder / u:object_r:binderfs:s0
 
-genfscon sysfs /devices/platform/soc@0/soc@0:bus@30800000/30a30000.i2c/i2c-1/1-0050/power_supply u:object_r:sysfs_batteryinfo:s0
-genfscon sysfs /devices/platform/soc@0/soc@0:bus@30800000/30a30000.i2c/i2c-1/1-0050/extcon   u:object_r:sysfs_extcon:s0
-genfscon sysfs /devices/platform/soc@0/soc@0:bus@30000000/30370000.snvs/30370000.snvs:snvs-rtc-lp/rtc/rtc0/hctosys     u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/soc@0/30800000.bus/30a30000.i2c/i2c-1/1-0050/power_supply u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/soc@0/30800000.bus/30a30000.i2c/i2c-1/1-0050/extcon   u:object_r:sysfs_extcon:s0
+genfscon sysfs /devices/platform/soc@0/30000000.bus/30370000.snvs/30370000.snvs:snvs-rtc-lp/rtc/rtc0/hctosys     u:object_r:sysfs_rtc:s0
 
-genfscon sysfs /devices/platform/soc@0/soc@0:bus@30800000/30b40000.mmc/mmc_host/mmc0/mmc0:5048/block/mmcblk0 u:object_r:sysfs_block_devices:s0
-genfscon sysfs /devices/platform/soc@0/soc@0:bus@30800000/30b60000.mmc/mmc_host/mmc2/mmc2:5048/block/mmcblk2 u:object_r:sysfs_block_devices:s0
+genfscon sysfs /devices/platform/soc@0/30800000.bus/30b40000.mmc/mmc_host/mmc0/mmc0:5048/block/mmcblk0 u:object_r:sysfs_block_devices:s0
+genfscon sysfs /devices/platform/soc@0/30800000.bus/30b60000.mmc/mmc_host/mmc2/mmc2:5048/block/mmcblk2 u:object_r:sysfs_block_devices:s0
 
-genfscon sysfs /devices/platform/soc@0/soc@0:bus@30800000/30bb0000.spi/spi_master/spi3/spi3.0/mtd/mtd0/mtdblock0        u:object_r:sysfs_block_devices:s0
+genfscon sysfs /devices/platform/soc@0/30800000.bus/30bb0000.spi/spi_master/spi3/spi3.0/mtd/mtd0/mtdblock0        u:object_r:sysfs_block_devices:s0
 
 genfscon sysfs /devices/platform/soc@0/33002000.nand-controller/mtd/mtd0/mtdblock0/                                     u:object_r:sysfs_block_devices:s0
 
 genfscon sysfs /devices/platform/panel-backlight/backlight/panel-backlight u:object_r:sysfs_leds:s0
 
 #sys/class/net
-genfscon sysfs /devices/platform/soc@0/soc@0:bus@30800000/30be0000.ethernet/net                                u:object_r:sysfs_net:s0
-genfscon sysfs /devices/platform/soc@0/soc@0:bus@30800000/30b50000.mmc/mmc_host/mmc1/mmc1:0001/mmc1:0001:1/net u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/soc@0/30800000.bus/30be0000.ethernet/net                                u:object_r:sysfs_net:s0
+genfscon sysfs /devices/platform/soc@0/30800000.bus/30b50000.mmc/mmc_host/mmc1/mmc1:0001/mmc1:0001:1/net u:object_r:sysfs_net:s0
 
+
+# for dumpstate to access the stat file
+genfscon sysfs /devices/platform/b8500000.pmem/ndbus0/region0/namespace0.0/block/pmem0                                            u:object_r:sysfs_block_devices:s0

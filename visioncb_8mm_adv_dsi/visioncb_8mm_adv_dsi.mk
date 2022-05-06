@@ -1,26 +1,27 @@
-# This is a FSL Android Reference Design platform based on i.MX8QP ARD board
-# It will inherit from FSL core product which in turn inherit from Google generic
+# -------@block_infrastructure-------
 
-VISIONSOM_DEVICE_PATH := device/fsl/visionsom_8mm/visioncb_8mm_adv_dsi
-VISIONSOM_COMMON_DEVICE_PATH := device/fsl/visionsom_8mm/visionsom_8mm_common
+VISIONSOM_COMMON_DEVICE_PATH := device/nxp/visionsom_8mm/visionsom_8mm_common
+NXP_COMMON_DEVICE_PATH := device/nxp
+
+CURRENT_FILE_PATH :=  $(lastword $(MAKEFILE_LIST))
+IMX_DEVICE_PATH := $(strip $(patsubst %/, %, $(dir $(CURRENT_FILE_PATH))))
+
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := true
 
 # configs shared between uboot, kernel and Android rootfs
-include $(VISIONSOM_DEVICE_PATH)/SharedBoardConfig.mk
+include $(IMX_DEVICE_PATH)/SharedBoardConfig.mk
 
--include device/fsl/common/imx_path/ImxPathConfig.mk
+-include $(NXP_COMMON_DEVICE_PATH)/common/imx_path/ImxPathConfig.mk
 include $(VISIONSOM_COMMON_DEVICE_PATH)/ProductConfigCommon.mk
 
-ifneq ($(wildcard $(VISIONSOM_COMMON_DEVICE_PATH)/fstab.freescale),)
-$(shell touch $(VISIONSOM_COMMON_DEVICE_PATH)/fstab.freescale)
-endif
+# -------@block_common_config-------
 
 # Overrides
-PRODUCT_NAME := visioncb_8mm_adv_dsi
+PRODUCT_NAME := visioncb_8mm_adv_dsi 
 PRODUCT_DEVICE := visioncb_8mm_adv_dsi
 PRODUCT_MODEL := VISIONCB_8MM_ADV_DSI
 
-# Audio card json
 PRODUCT_COPY_FILES += \
-    $(VISIONSOM_DEVICE_PATH)/audio-json/nau8822_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/configs/audio/nau8822_config.json \
-    $(VISIONSOM_DEVICE_PATH)/audio-json/dummy_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/configs/audio/dummy_config.json \
-    device/fsl/common/audio-json/readme.txt:$(TARGET_COPY_OUT_VENDOR)/etc/configs/audio/readme.txt
+    $(IMX_DEVICE_PATH)/audio-json/nau8822_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/configs/audio/nau8822_config.json \
+    $(IMX_DEVICE_PATH)/audio-json/dummy_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/configs/audio/dummy_config.json
+

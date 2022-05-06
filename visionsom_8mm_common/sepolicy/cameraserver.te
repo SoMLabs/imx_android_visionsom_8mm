@@ -1,6 +1,4 @@
-typeattribute cameraserver system_writes_vendor_properties_violators;
-
-get_prop(cameraserver, vendor_default_prop)
+get_prop(cameraserver, vendor_public_default_prop)
 
 allow cameraserver sysfs:dir { read open };
 allow cameraserver gpu_device:chr_file { read open write ioctl map };

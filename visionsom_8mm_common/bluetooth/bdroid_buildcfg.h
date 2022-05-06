@@ -20,7 +20,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME "VisionSOM-8Mmini"
+#define BTM_DEF_LOCAL_NAME "VisionSOM-8MMini"
 
 // Disables Interleave scan
 #define BTA_HOST_INTERLEAVE_SEARCH  FALSE
